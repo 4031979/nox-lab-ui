@@ -1,0 +1,128 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ---- List ---- */
+.list {
+  display: flex;
+  align-items: center;
+}
+
+.fullWidth .trigger { flex: 1; }
+
+/* Line variant */
+.line {
+  border-bottom: 1px solid var(--border-color);
+  gap: 0;
+}
+
+/* Pill variant */
+.pill {
+  background: var(--color-gray-100);
+  border-radius: var(--radius-lg);
+  padding: 4px;
+  gap: 2px;
+  display: inline-flex;
+}
+
+/* ---- Trigger ---- */
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  transition: all var(--duration-fast) var(--ease-default);
+  white-space: nowrap;
+  color: var(--color-gray-500);
+}
+
+.trigger:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+  border-radius: var(--radius-md);
+}
+
+/* Line trigger */
+.trigger-line {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  border-radius: 0;
+}
+
+.trigger-line:hover:not(.triggerDisabled) {
+  color: var(--color-gray-900);
+  border-bottom-color: var(--color-gray-300);
+}
+
+.trigger-line.triggerActive {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Pill trigger */
+.trigger-pill {
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+}
+
+.trigger-pill:hover:not(.triggerDisabled) {
+  color: var(--color-gray-900);
+  background: var(--color-gray-200);
+}
+
+.trigger-pill.triggerActive {
+  background: var(--color-white);
+  color: var(--color-gray-900);
+  font-weight: var(--font-weight-semibold);
+  box-shadow: var(--shadow-sm);
+}
+
+.triggerDisabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Icon & Badge */
+.triggerIcon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  background: var(--color-gray-200);
+  color: var(--color-gray-700);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-full);
+}
+
+.triggerActive .badge {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* ---- Content ---- */
+.content {
+  animation: fadeIn var(--duration-normal) var(--ease-default);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

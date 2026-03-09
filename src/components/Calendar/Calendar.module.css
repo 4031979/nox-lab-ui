@@ -1,0 +1,81 @@
+.root {
+  background: var(--color-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  width: 280px;
+  box-shadow: var(--shadow-sm);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.navBtn {
+  width: 28px; height: 28px;
+  border-radius: var(--radius-md);
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-gray-500);
+  transition: background var(--duration-fast), color var(--duration-fast);
+}
+.navBtn:hover { background: var(--color-gray-100); color: var(--color-gray-900); }
+
+.monthYear { display: flex; gap: var(--space-1); }
+
+.month {
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-900);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.dayName {
+  font-family: var(--font-family);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-400);
+  text-align: center;
+  padding: var(--space-1) 0;
+}
+
+.cell {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-700);
+  background: none;
+  border: none;
+  border-radius: var(--radius-full);
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background var(--duration-fast), color var(--duration-fast);
+  margin: 0 auto;
+}
+.cell:hover:not(:disabled) { background: var(--color-gray-100); }
+.cell:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.cellOtherMonth { color: var(--color-gray-300); pointer-events: none; }
+
+.cellToday {
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.cellSelected {
+  background: var(--color-primary) !important;
+  color: white !important;
+  font-weight: var(--font-weight-bold);
+}

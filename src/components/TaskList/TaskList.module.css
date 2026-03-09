@@ -1,0 +1,56 @@
+.root { display: flex; flex-direction: column; gap: var(--space-4); }
+
+.section { display: flex; flex-direction: column; gap: var(--space-1); }
+
+.sectionTitle {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-400);
+  margin: 0 0 var(--space-1);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-size: 11px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  cursor: pointer;
+}
+.item:hover .label { color: var(--color-gray-900); }
+
+.checkbox {
+  appearance: none;
+  width: 18px; height: 18px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-gray-300);
+  background: var(--color-white);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all var(--duration-fast);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.checkbox:checked {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='1.5,6 4.5,9.5 10.5,2.5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.label {
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  color: var(--color-gray-700);
+  transition: all var(--duration-fast);
+}
+
+.labelDone {
+  text-decoration: line-through;
+  color: var(--color-gray-400);
+}

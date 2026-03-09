@@ -1,0 +1,103 @@
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.divided .item + .item {
+  border-top: 1px solid var(--border-color);
+}
+
+.bordered {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* ---- Item ---- */
+.item {}
+.itemDisabled { opacity: 0.45; }
+
+/* ---- Trigger ---- */
+.trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family);
+  text-align: left;
+  transition: color var(--duration-fast) var(--ease-default);
+}
+
+.bordered .trigger {
+  padding: var(--space-4) var(--space-5);
+}
+
+.trigger:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+  border-radius: var(--radius-md);
+}
+
+.trigger:hover:not(:disabled) .title {
+  color: var(--color-primary);
+}
+
+.triggerLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.icon {
+  display: inline-flex;
+  color: var(--color-gray-500);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+  transition: color var(--duration-fast);
+}
+
+.itemOpen .title {
+  color: var(--color-primary);
+}
+
+/* Chevron */
+.chevron {
+  display: flex;
+  align-items: center;
+  color: var(--color-gray-400);
+  flex-shrink: 0;
+  transition: transform var(--duration-normal) var(--ease-default);
+}
+
+.chevron svg { width: 16px; height: 16px; }
+.chevronOpen { transform: rotate(180deg); }
+
+/* ---- Panel ---- */
+.panel {
+  overflow: hidden;
+  height: 0;
+  transition: height 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.panelInner {
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  color: var(--color-gray-500);
+  line-height: 1.7;
+  padding-bottom: var(--space-4);
+}
+
+.bordered .panelInner {
+  padding: 0 var(--space-5) var(--space-4);
+}

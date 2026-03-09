@@ -1,0 +1,94 @@
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.label {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-700);
+  letter-spacing: 0.01em;
+}
+
+.inputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  box-shadow: var(--shadow-xs);
+  transition: border-color var(--duration-fast) var(--ease-default),
+              box-shadow var(--duration-fast) var(--ease-default);
+}
+
+.inputWrap:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.hasError {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 3px var(--color-danger-light);
+}
+.hasError:focus-within {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 3px var(--color-danger-light);
+}
+
+/* Sizes */
+.sm .input { height: 30px; font-size: var(--font-size-sm); }
+.md .input { height: 38px; font-size: var(--font-size-md); }
+.lg .input { height: 46px; font-size: var(--font-size-lg); }
+
+.input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family);
+  color: var(--color-gray-900);
+  padding: 0 var(--space-3);
+}
+
+.input::placeholder {
+  color: var(--color-gray-400);
+}
+
+.input:disabled {
+  cursor: not-allowed;
+  color: var(--color-gray-500);
+  background: var(--color-gray-50);
+}
+
+.hasLeft { padding-left: var(--space-1); }
+.hasRight { padding-right: var(--space-1); }
+
+.leftEl,
+.rightEl {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 var(--space-2);
+  color: var(--color-gray-400);
+  flex-shrink: 0;
+  font-size: var(--font-size-sm);
+}
+
+.error {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  color: var(--color-danger);
+  font-weight: var(--font-weight-medium);
+}
+
+.hint {
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-400);
+}

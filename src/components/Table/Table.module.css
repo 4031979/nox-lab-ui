@@ -1,0 +1,130 @@
+.wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+}
+
+.bordered {
+  border: 1px solid var(--border-color);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+}
+
+/* ---- Head ---- */
+.thead { background: var(--color-gray-50); }
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 1px 0 var(--border-color);
+}
+
+.th {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-500);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.thInner {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.sortable { cursor: pointer; }
+.sortable:hover .sortIcon { color: var(--color-gray-700); }
+
+.sorted { color: var(--color-primary); }
+
+.sortIcon {
+  font-size: 11px;
+  color: var(--color-gray-300);
+  transition: color var(--duration-fast);
+}
+
+/* ---- Body ---- */
+.tr {
+  transition: background var(--duration-fast);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tr:last-child { border-bottom: none; }
+
+.hoverable .tr:hover { background: var(--color-gray-50); }
+
+.striped .tr:nth-child(even) { background: var(--color-gray-50); }
+
+.trSelected { background: var(--color-primary-light) !important; }
+
+.td {
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-gray-700);
+  vertical-align: middle;
+}
+
+/* ---- Checkbox ---- */
+.checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--color-gray-400);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  cursor: pointer;
+  transition: all var(--duration-fast);
+  display: block;
+}
+
+.checkbox:checked {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='1.5,6 4.5,9.5 10.5,2.5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.checkbox:indeterminate {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='2' y1='6' x2='10' y2='6' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ---- States ---- */
+.empty {
+  padding: var(--space-8) var(--space-4);
+  text-align: center;
+  color: var(--color-gray-400);
+  font-size: var(--font-size-md);
+}
+
+/* Skeleton cells */
+.skeletonCell {
+  display: block;
+  height: 14px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(90deg, var(--color-gray-100) 25%, var(--color-gray-200) 50%, var(--color-gray-100) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  width: 80%;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
